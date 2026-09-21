@@ -12,5 +12,80 @@
 <section class="section"><div class="label">06 / Submission note</div><h2>How to use this app</h2><p class="lead">Review each recommendation against the original evidence pack. Where a judgment is material, write your own conclusion, evidence, confidence, and statement effect before handing in your work.</p><details><summary>Evidence hierarchy used</summary><p>Bank and signed third-party records → third-party invoices → warehouse and delivery records → internal operational records → management spreadsheets → unsupported messages.</p></details></section></main><footer>Divorce Party International Ltd. · Reporting date: 31 August 2026 · All figures in EUR · Educational analyst draft</footer><script>
 const decisions=[
 ['D041','material','Classify September customer deposits','Reclassify €90,000 September deposits as contract liabilities until delivery.','high'],['D042','material','Classify new bank borrowing','Recognise the €50,000 bank advance as a loan liability, not income.','high'],['D043','material','Classify packaging machine','Capitalise the €60,000 packaging machine as PPE and an investing cash outflow.','high'],['D045','material','Classify machine repair','Expense the €10,000 belt and calibration work; it restored normal output.','high'],['D046','material','Classify villa deposit','Treat the €70,000 villa payment as an owner distribution.','high'],['D047','material','Classify owner-card spending','Treat €40,000 owner-card spending as owner distribution.','high'],['D048','material','Classify materials consumed','Use €396,000 count-implied consumption; disclose the €9,000 conflict with operations records.','medium'],['D057','material','Classify bad receivable','Write off the R-17 receivable of €18,000.','high'],['D058','material','Classify damaged stock','Write down €22,000 damaged stock; do not accrue the €2,000 quote without an obligation.','medium'],['D059','material','Classify employee claim','Recognise a €25,000 provision for the probable claim.','high'],['D064','material','Classify NorthStar contract','Recognise €180,000 revenue on acceptance.','high'],['D068','material','Classify undelivered events','Exclude €90,000 September events from August revenue.','high'],['D071','material','Estimate bad debt','Use the €18,000 R-17 write-off; no recovery is supported.','high'],['D075','material','Estimate closing inventory','Use €121,000 after the write-down; retain the €9,000 uncertainty.','medium'],['D089','operational','Estimate net profit','Use €74,000 primary profit, with €65,000 as the stock-conflict alternative.','medium'],['D091','material','Approve corrected accounts','Use corrected accounts, with explicit €9,000 inventory and €45,000 opening-AP qualifications.','medium'],['D092','operational','Freeze owner-card access','Freeze access and investigate €110,000 owner distributions.','high'],['D093','operational','Move September deposits','Move €90,000 of deposits to contract liabilities.','high'],['D094','operational','Start a 13-week cash forecast','Prepare a weekly rolling 13-week forecast.','medium'],['D095','operational','Stop high-risk credit sales','Stop unsecured credit while customer risk is reviewed.','high'],['D096','operational','Dispose of damaged stock','Quarantine wet stock and verify safe disposal and final cost.','high'],['D097','operational','Investigate management override','Investigate altered spreadsheets and the €9,000 inventory difference.','high'],['D098','operational','Renegotiate supplier terms','Confirm and negotiate €126,000 of supplier payables while preserving supply.','high'],['D099','operational','Continue core operations','Continue conditionally under cash, credit, stock, and owner-spend controls.','medium'],['D100','material','Use management profit for earn-out','Reject €312,000 management profit; use reconciled €74,000 subject to inventory uncertainty.','medium']];
+const extra=`D001|NorthStar receipt|€180,000 receipt settles accepted invoice; reduce AR.|high
+D002|Freedom receipt|€142,000 receipt settles Freedom invoice; €58,000 remains AR.|high
+D003|Phoenix receipt|€70,000 receipt settles completed event; €30,000 remains AR.|high
+D004|Liberty receipt|€95,000 receipt settles delivered order; €25,000 remains AR.|high
+D005|Opening AR receipt|€35,000 receipt settles opening AR, not current revenue.|high
+D006|Finally Single receipts|€250,000 receipts settle delivered sales; €20,000 remains AR.|medium
+D007|Never Call Back receipts|€37,000 receipts settle sales; €53,000 gross AR remains before R-17.|medium
+D008|New Beginnings deposit|€60,000 September receipt is contract liability.|high
+D009|Fresh Freedom deposit|€30,000 September receipt is contract liability.|high
+D010|BoxWorks payment|€105,000 reduces supplier payable.|high
+D011|Glass & Drama payment|€92,000 reduces supplier payable.|high
+D012|Print Again payment|€81,000 reduces supplier payable.|high
+D013|Event Things payment|€55,000 applies to current invoices and €45,000 to inferred opening AP.|medium
+D014|January payroll|Do not isolate January from combined January–August cash payment.|high
+D015|February payroll|Do not isolate February from combined period payroll payment.|high
+D016|March payroll|Do not isolate March from combined period payroll payment.|high
+D017|April payroll|Do not isolate April from combined period payroll payment.|high
+D018|May payroll|Do not isolate May from combined period payroll payment.|high
+D019|June payroll|Do not isolate June from combined period payroll payment.|high
+D020|July payroll|Do not isolate July from combined period payroll payment.|high
+D021|August payroll|Use €248,000 expense and €231,000 paid; €32,000 payable remains.|high
+D022|Rent|€48,000 is paid operating expense.|high
+D023|Marketing|€55,000 marketing is operating expense.|high
+D024|Software|€16,000 software is operating expense.|high
+D025|Utilities|€12,000 utilities is operating expense.|high
+D026|Repair transfer|Expense €10,000 machine repair; it restored normal output.|high
+D027|Packaging machine payment|€60,000 is PPE and investing cash flow.|high
+D028|Photo booth payment|€20,000 is PPE and investing cash flow.|high
+D029|Loan receipt|€50,000 bank advance is borrowing, not income.|high
+D030|Loan repayment|€19,000 reduces principal.|high
+D031|Interest payments|€12,000 expense, €10,000 paid, €2,000 payable.|high
+D032|Villa deposit|€70,000 is owner distribution.|high
+D033|Owner-card spending|€40,000 is owner distribution.|high
+D034|Insurance movement|Record €0; no insurance amount is evidenced.|low
+D035|Water-damaged stock|Write down €22,000; disclose but do not accrue €2,000 disposal quote.|medium
+D036|Customer insolvency|Write off R-17 €18,000.|high
+D037|Former employee claim|Recognise €25,000 provision; no cash payment at year-end.|high
+D038|Purchases|Recognise €459,000 goods received before 31 August.|high
+D039|Cash collections|€899,000 equals €809,000 collections plus €90,000 advances.|high
+D040|Closing bank balance|Closing bank cash is €60,000.|high
+D044|Photo booth|Capitalise €20,000 as PPE.|high
+D049|Event staff payroll|Present €80,000 as direct cost of sales.|high
+D050|Sales payroll|Classify €72,000 as selling expense.|high
+D051|Office payroll|Classify €96,000 as administrative expense.|high
+D052|Rent classification|Classify €48,000 as operating expense.|high
+D053|Marketing classification|Classify €55,000 as operating expense.|high
+D054|Software classification|Classify €16,000 as operating expense.|high
+D055|Utilities classification|Classify €12,000 as operating expense.|high
+D056|Depreciation|Recognise €24,000 period depreciation.|medium
+D060|Insurance consumed|Record €0 evidenced insurance expense; disclose missing records.|low
+D061|Unpaid interest|Recognise €2,000 interest payable.|high
+D062|Unpaid payroll|Recognise €32,000 payroll payable.|high
+D063|Unpaid suppliers|Recognise €126,000 supplier payable.|high
+D065|Freedom contract|Recognise €200,000 revenue on acceptance.|high
+D066|Phoenix event|Recognise €100,000 revenue on completion.|high
+D067|Liberty order|Recognise €120,000 revenue on delivery and acceptance.|high
+D069|Loan principal payment|€19,000 is financing cash outflow.|high
+D070|Equipment purchase|€80,000 is PPE and investing cash outflow.|high
+D072|Damaged inventory|Write down €22,000; no €2,000 provision without obligation.|medium
+D073|Legal provision|Use €25,000 provision; reasonable range €20,000–€30,000.|high
+D074|Period depreciation|Use €24,000 independent estimate.|medium
+D076|Closing receivables|€186,000 gross AR less €18,000 write-off = €168,000 net.|high
+D077|Repair versus improvement|€10,000 repair expense; €0 capital improvement.|high
+D078|Insurance expense|Use €0 because no evidence supports an amount.|low
+D079|Interest payable|Use €2,000 closing interest payable.|high
+D080|Accrued payroll|Use €32,000 closing payroll payable.|high
+D081|Deposit liability|Use €90,000 customer-deposit liability.|high
+D082|PPE closing cost|Use €260,000 closing PPE cost.|high
+D083|Accumulated depreciation|Use €69,000 closing accumulated depreciation.|medium
+D084|Supplier payable|Use €126,000 AP; flag €45,000 opening AP as inferred.|medium
+D085|Closing loan|Use €131,000 closing loan principal.|high
+D086|Physical COGS|Use €418,000: €396,000 consumption plus €22,000 impairment.|medium
+D087|Direct service payroll|Use €80,000 direct service payroll.|high
+D088|Owner distributions|Use €110,000 total owner distributions.|high
+D090|Closing cash|Use €60,000 closing bank cash.|high`.split('\n').map(x=>{let [id,title,answer,confidence]=x.split('|');return[id, id.match(/D0(4[1-9]|5[6-9]|6[4-8]|7[1-5])/)?'material':'operational',title,answer,confidence]});decisions.push(...extra);
 const out=document.querySelector('#decisions'),search=document.querySelector('#search'),filter=document.querySelector('#filter'),count=document.querySelector('#count');function render(){let q=search.value.toLowerCase(),f=filter.value,shown=decisions.filter(d=>(f==='all'||d[1]===f)&&d.join(' ').toLowerCase().includes(q));count.textContent=`${shown.length} of ${decisions.length} shown`;out.innerHTML=shown.map(d=>`<article class="decision"><div class="id">${d[0]}</div><div><h3>${d[2]}</h3><p>${d[1]==='material'?'Material judgment':'Operational decision'}</p></div><div><p>${d[3]}</p></div><div class="confidence ${d[4]}">${d[4].toUpperCase()}</div></article>`).join('')||'<p>No decisions match your search.</p>'}search.addEventListener('input',render);filter.addEventListener('change',render);render();
 </script></body></html>
