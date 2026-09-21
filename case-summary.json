@@ -1,0 +1,36 @@
+{
+  "caseId": "DPI-HT-01",
+  "company": "Divorce Party International Ltd.",
+  "reportingDate": "2026-08-31",
+  "currency": "EUR",
+  "position": "Continue core operations conditionally while protecting cash, correcting accounts, and resolving evidence gaps.",
+  "financialStatements": {
+    "profitBeforeTax": 74000,
+    "revenue": 960000,
+    "closingCash": 60000,
+    "totalAssets": 540000,
+    "totalLiabilities": 406000,
+    "closingEquity": 134000
+  },
+  "keyUncertainties": [
+    { "item": "Inventory conflict", "amount": 9000, "treatment": "Use €121,000 closing inventory in the primary case and disclose the conflict." },
+    { "item": "Opening supplier payable", "amount": 45000, "treatment": "Infer from roll-forward; confirm missing opening ledger." },
+    { "item": "Disposal quote", "amount": 2000, "treatment": "Disclose; do not accrue until a reporting-date obligation is established." }
+  ],
+  "immediateControls": [
+    "Freeze owner-card access and investigate €110,000 distributions.",
+    "Prepare a weekly rolling 13-week cash forecast.",
+    "Recount stock, quarantine damaged goods, and investigate the €9,000 difference.",
+    "Confirm supplier statements and negotiate €126,000 payable.",
+    "Tighten customer credit and collections controls."
+  ],
+  "sourceHierarchy": [
+    "Bank and signed third-party evidence",
+    "Third-party invoices",
+    "Warehouse and delivery records",
+    "Internal operations records",
+    "Management spreadsheets",
+    "Unsupported messages"
+  ],
+  "studentReviewRequired": true
+}
