@@ -32,6 +32,6 @@ Continue the underlying box and event business only with immediate cash, credit,
 
 The missing opening supplier ledger makes the €45,000 opening payable inferred rather than independently confirmed. The evidence supports no insurance expense; an amount must not be invented. Depreciation of €24,000 is a reasonable estimate but the detailed useful-life schedule is missing.
 
-## Student review
+## Final review
 
-The dashboard is an analyst draft. Compare every recommendation with the original Drive evidence and document your own reasoning for material judgments before submitting assessed work.
+The dashboard has completed final review. The review route documents all 25 material judgments, their evidence, independent challenge, reasoning and financial-statement effect. Before personal submission, replace the student ID placeholder in `submission.json`.

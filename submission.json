@@ -1,0 +1,1580 @@
+{
+  "schemaVersion": "1.0",
+  "caseId": "DPI-HT-01",
+  "reportingDate": "2026-08-31",
+  "currency": "EUR",
+  "submissionStatus": "final-review-complete-student-id-required",
+  "student": {
+    "id": "TO_COMPLETE",
+    "name": "Linda Margeviča"
+  },
+  "routes": {
+    "dashboard": "/",
+    "review": "/review/",
+    "submission": "/submission.json"
+  },
+  "evidence": [
+    {
+      "id": "E01",
+      "source": "Bank statements and loan record",
+      "reliability": "high",
+      "use": "Cash, loan, interest and owner-payment classification"
+    },
+    {
+      "id": "E02",
+      "source": "Signed customer contracts, acceptances and delivery records",
+      "reliability": "high",
+      "use": "Revenue and contract-liability timing"
+    },
+    {
+      "id": "E03",
+      "source": "Warehouse count and damage evidence",
+      "reliability": "high",
+      "use": "Inventory and material-cost assessment"
+    },
+    {
+      "id": "E04",
+      "source": "Payroll, supplier and PPE records",
+      "reliability": "high",
+      "use": "Payroll, payables and PPE roll-forwards"
+    },
+    {
+      "id": "E05",
+      "source": "Management spreadsheets",
+      "reliability": "medium",
+      "use": "Used only where consistent with stronger evidence"
+    }
+  ],
+  "schedules": {
+    "payroll": {
+      "openingPayable": 15000,
+      "expense": 248000,
+      "cashPaid": 231000,
+      "closingPayable": 32000,
+      "calculation": "15,000 + 248,000 - 231,000 = 32,000"
+    },
+    "operatingExpenses": {
+      "rent": 48000,
+      "marketing": 55000,
+      "software": 16000,
+      "utilities": 12000,
+      "repairs": 10000,
+      "insurance": 0,
+      "total": 141000,
+      "calculation": "48,000 + 55,000 + 16,000 + 12,000 + 10,000 + 0 = 141,000"
+    },
+    "ppe": {
+      "openingGrossCost": 180000,
+      "packagingMachine": 60000,
+      "booth": 20000,
+      "closingGrossCost": 260000,
+      "openingAccumulatedDepreciation": 45000,
+      "currentDepreciation": 24000,
+      "closingAccumulatedDepreciation": 69000,
+      "closingNetPPE": 191000,
+      "calculation": "260,000 - 69,000 = 191,000"
+    },
+    "equity": {
+      "openingEquity": 170000,
+      "profitBeforeTax": 74000,
+      "villaDistribution": -70000,
+      "ownerCardDistribution": -40000,
+      "closingEquity": 134000,
+      "calculation": "170,000 + 74,000 - 70,000 - 40,000 = 134,000"
+    }
+  },
+  "statements": {
+    "profitAndLoss": {
+      "revenue": 960000,
+      "materialCostOfSales": -418000,
+      "directPayrollCostOfSales": -80000,
+      "grossProfit": 462000,
+      "salesAndOfficePayroll": -168000,
+      "otherOperatingExpenses": -141000,
+      "depreciation": -24000,
+      "badDebtExpense": -18000,
+      "legalProvision": -25000,
+      "operatingProfit": 86000,
+      "interestExpense": -12000,
+      "profitBeforeTax": 74000,
+      "calculation": "960,000 - 418,000 - 80,000 - 168,000 - 141,000 - 24,000 - 18,000 - 25,000 = 86,000; 86,000 - 12,000 = 74,000"
+    },
+    "cashFlow": {
+      "closingCash": 60000,
+      "comment": "Closing cash agrees to the reconciled bank balance."
+    },
+    "balanceSheet": {
+      "cash": 60000,
+      "tradeReceivables": 168000,
+      "inventory": 121000,
+      "netPPE": 191000,
+      "totalAssets": 540000,
+      "tradeAndOtherPayables": 126000,
+      "payrollPayable": 32000,
+      "customerDeposits": 90000,
+      "legalProvision": 25000,
+      "bankLoan": 131000,
+      "interestPayable": 2000,
+      "totalLiabilities": 406000,
+      "equity": 134000,
+      "calculation": "540,000 = 406,000 + 134,000"
+    }
+  },
+  "reconciliations": [
+    {
+      "name": "P&L",
+      "status": "reconciled",
+      "calculation": "Operating profit 86,000 less interest expense 12,000 equals profit before tax 74,000."
+    },
+    {
+      "name": "Payroll payable",
+      "status": "reconciled",
+      "calculation": "Opening 15,000 plus expense 248,000 less payments 231,000 equals closing 32,000."
+    },
+    {
+      "name": "PPE",
+      "status": "reconciled",
+      "calculation": "Gross cost 260,000 less accumulated depreciation 69,000 equals net PPE 191,000."
+    },
+    {
+      "name": "Equity",
+      "status": "reconciled",
+      "calculation": "Opening equity 170,000 plus PBT 74,000 less owner distributions 110,000 equals closing equity 134,000."
+    },
+    {
+      "name": "Balance sheet",
+      "status": "reconciled",
+      "calculation": "Assets 540,000 equal liabilities 406,000 plus equity 134,000."
+    }
+  ],
+  "uncertainties": [
+    {
+      "issue": "Inventory conflict",
+      "effect": "The physical-count evidence supports the primary inventory figure, but a management spreadsheet conflicts. Complete a management recount and explanation."
+    },
+    {
+      "issue": "Supplier opening payable",
+      "effect": "The opening supplier payable is inferred from the roll-forward and should be confirmed directly with the supplier."
+    },
+    {
+      "issue": "Disposal quote",
+      "effect": "The €2,000 quote is disclosed only; no cost is booked until an obligation or invoice is evidenced."
+    },
+    {
+      "issue": "Employee claim",
+      "effect": "The €25,000 provision is an estimate and must be updated when legal advice changes."
+    }
+  ],
+  "boardRecommendation": {
+    "recommendation": "Continue core operations conditionally.",
+    "conditions": [
+      "Freeze owner distributions and private-card use.",
+      "Prepare a weekly cash forecast.",
+      "Confirm supplier balance and complete stock recount.",
+      "Maintain credit controls and review the employee claim."
+    ],
+    "rationale": "The corrected accounts show €74,000 profit before tax, but cash, inventory, supplier and legal risks require active controls."
+  },
+  "decisions": [
+    {
+      "id": "D001",
+      "category": "evidence_matching",
+      "reviewTier": "operational",
+      "question": "Resolve the source and treatment of NorthStar receipt.",
+      "answer": "Record the NorthStar receipt against the supported customer balance and delivered service.",
+      "evidence": [
+        "Bank statements and supporting case records"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D002",
+      "category": "evidence_matching",
+      "reviewTier": "operational",
+      "question": "Resolve the source and treatment of Freedom receipt 1.",
+      "answer": "Record the Freedom receipt using the contract and delivery timing.",
+      "evidence": [
+        "Bank statements and supporting case records"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D003",
+      "category": "evidence_matching",
+      "reviewTier": "operational",
+      "question": "Resolve the source and treatment of Phoenix receipt.",
+      "answer": "Record the Phoenix receipt only to the extent it relates to delivered work.",
+      "evidence": [
+        "Bank statements and supporting case records"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D004",
+      "category": "evidence_matching",
+      "reviewTier": "operational",
+      "question": "Resolve the source and treatment of Liberty receipt.",
+      "answer": "Record the Liberty receipt only to the extent it relates to delivered work.",
+      "evidence": [
+        "Bank statements and supporting case records"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D005",
+      "category": "evidence_matching",
+      "reviewTier": "operational",
+      "question": "Resolve the source and treatment of Opening receivable receipt.",
+      "answer": "Treat the opening receivable collection as cash collected from a customer, not new revenue.",
+      "evidence": [
+        "Bank statements and supporting case records"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D006",
+      "category": "evidence_matching",
+      "reviewTier": "operational",
+      "question": "Resolve the source and treatment of Finally Single web receipts.",
+      "answer": "Recognise web sales when products or services are delivered.",
+      "evidence": [
+        "Bank statements and supporting case records"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D007",
+      "category": "evidence_matching",
+      "reviewTier": "operational",
+      "question": "Resolve the source and treatment of Never Call Back web receipts.",
+      "answer": "Recognise other web sales when delivery is supported.",
+      "evidence": [
+        "Bank statements and supporting case records"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D008",
+      "category": "evidence_matching",
+      "reviewTier": "operational",
+      "question": "Resolve the source and treatment of New Beginnings deposit.",
+      "answer": "Record customer deposits as contract liabilities until the event is delivered.",
+      "evidence": [
+        "Bank statements and supporting case records"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D009",
+      "category": "evidence_matching",
+      "reviewTier": "operational",
+      "question": "Resolve the source and treatment of Fresh Freedom deposit.",
+      "answer": "Record the second customer deposit as a contract liability until performance is complete.",
+      "evidence": [
+        "Bank statements and supporting case records"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D010",
+      "category": "evidence_matching",
+      "reviewTier": "operational",
+      "question": "Resolve the source and treatment of Box supplier payment.",
+      "answer": "Record supplier payment as settlement of materials or supplier payable.",
+      "evidence": [
+        "Bank statements and supporting case records"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D011",
+      "category": "evidence_matching",
+      "reviewTier": "operational",
+      "question": "Resolve the source and treatment of Glass supplier payment.",
+      "answer": "Record supplier payment as settlement of materials or supplier payable.",
+      "evidence": [
+        "Bank statements and supporting case records"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D012",
+      "category": "evidence_matching",
+      "reviewTier": "operational",
+      "question": "Resolve the source and treatment of Print supplier payment.",
+      "answer": "Record supplier payment as settlement of materials or supplier payable.",
+      "evidence": [
+        "Bank statements and supporting case records"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D013",
+      "category": "evidence_matching",
+      "reviewTier": "operational",
+      "question": "Resolve the source and treatment of Event supplier payment.",
+      "answer": "Record supplier payment as settlement of materials or supplier payable.",
+      "evidence": [
+        "Bank statements and supporting case records"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D014",
+      "category": "evidence_matching",
+      "reviewTier": "operational",
+      "question": "Resolve the source and treatment of January payroll.",
+      "answer": "Record payroll payment against payroll cost or payroll payable.",
+      "evidence": [
+        "Bank statements and supporting case records"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D015",
+      "category": "evidence_matching",
+      "reviewTier": "operational",
+      "question": "Resolve the source and treatment of February payroll.",
+      "answer": "Record payroll payment against payroll cost or payroll payable.",
+      "evidence": [
+        "Bank statements and supporting case records"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D016",
+      "category": "evidence_matching",
+      "reviewTier": "operational",
+      "question": "Resolve the source and treatment of March payroll.",
+      "answer": "Record payroll payment against payroll cost or payroll payable.",
+      "evidence": [
+        "Bank statements and supporting case records"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D017",
+      "category": "evidence_matching",
+      "reviewTier": "operational",
+      "question": "Resolve the source and treatment of April payroll.",
+      "answer": "Record payroll payment against payroll cost or payroll payable.",
+      "evidence": [
+        "Bank statements and supporting case records"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D018",
+      "category": "evidence_matching",
+      "reviewTier": "operational",
+      "question": "Resolve the source and treatment of May payroll.",
+      "answer": "Record payroll payment against payroll cost or payroll payable.",
+      "evidence": [
+        "Bank statements and supporting case records"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D019",
+      "category": "evidence_matching",
+      "reviewTier": "operational",
+      "question": "Resolve the source and treatment of June payroll.",
+      "answer": "Record payroll payment against payroll cost or payroll payable.",
+      "evidence": [
+        "Bank statements and supporting case records"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D020",
+      "category": "evidence_matching",
+      "reviewTier": "operational",
+      "question": "Resolve the source and treatment of July payroll.",
+      "answer": "Record payroll payment against payroll cost or payroll payable.",
+      "evidence": [
+        "Bank statements and supporting case records"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D021",
+      "category": "evidence_matching",
+      "reviewTier": "operational",
+      "question": "Resolve the source and treatment of August payroll.",
+      "answer": "Record payroll payment against payroll cost or payroll payable.",
+      "evidence": [
+        "Bank statements and supporting case records"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D022",
+      "category": "evidence_matching",
+      "reviewTier": "operational",
+      "question": "Resolve the source and treatment of Rent payments.",
+      "answer": "Record rent as an operating expense.",
+      "evidence": [
+        "Bank statements and supporting case records"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D023",
+      "category": "evidence_matching",
+      "reviewTier": "operational",
+      "question": "Resolve the source and treatment of Meta and influencer payments.",
+      "answer": "Record marketing as an operating expense.",
+      "evidence": [
+        "Bank statements and supporting case records"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D024",
+      "category": "evidence_matching",
+      "reviewTier": "operational",
+      "question": "Resolve the source and treatment of Software payments.",
+      "answer": "Record software as an operating expense.",
+      "evidence": [
+        "Bank statements and supporting case records"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D025",
+      "category": "evidence_matching",
+      "reviewTier": "operational",
+      "question": "Resolve the source and treatment of Utilities payments.",
+      "answer": "Record utilities as an operating expense.",
+      "evidence": [
+        "Bank statements and supporting case records"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D026",
+      "category": "evidence_matching",
+      "reviewTier": "operational",
+      "question": "Resolve the source and treatment of Repair transfer.",
+      "answer": "Record repair as an operating expense.",
+      "evidence": [
+        "Bank statements and supporting case records"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D027",
+      "category": "evidence_matching",
+      "reviewTier": "operational",
+      "question": "Resolve the source and treatment of Packaging machine payment.",
+      "answer": "Capitalise the packaging machine as PPE.",
+      "evidence": [
+        "Bank statements and supporting case records"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D028",
+      "category": "evidence_matching",
+      "reviewTier": "operational",
+      "question": "Resolve the source and treatment of Photo booth payment.",
+      "answer": "Capitalise the booth as PPE.",
+      "evidence": [
+        "Bank statements and supporting case records"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D029",
+      "category": "evidence_matching",
+      "reviewTier": "operational",
+      "question": "Resolve the source and treatment of Loan receipt.",
+      "answer": "Record the bank loan receipt as financing, not revenue.",
+      "evidence": [
+        "Bank statements and supporting case records"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D030",
+      "category": "evidence_matching",
+      "reviewTier": "operational",
+      "question": "Resolve the source and treatment of Loan repayments.",
+      "answer": "Record loan principal repayment as financing.",
+      "evidence": [
+        "Bank statements and supporting case records"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D031",
+      "category": "evidence_matching",
+      "reviewTier": "operational",
+      "question": "Resolve the source and treatment of Interest payments.",
+      "answer": "Record interest as finance cost.",
+      "evidence": [
+        "Bank statements and supporting case records"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D032",
+      "category": "evidence_matching",
+      "reviewTier": "operational",
+      "question": "Resolve the source and treatment of Villa deposit.",
+      "answer": "Treat the villa payment as an owner distribution.",
+      "evidence": [
+        "Bank statements and supporting case records"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D033",
+      "category": "evidence_matching",
+      "reviewTier": "operational",
+      "question": "Resolve the source and treatment of Owner card spending.",
+      "answer": "Treat private owner-card spending as an owner distribution.",
+      "evidence": [
+        "Bank statements and supporting case records"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D034",
+      "category": "evidence_matching",
+      "reviewTier": "operational",
+      "question": "Resolve the source and treatment of Insurance movement.",
+      "answer": "Do not record insurance expense without supporting evidence.",
+      "evidence": [
+        "Bank statements and supporting case records"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D035",
+      "category": "evidence_matching",
+      "reviewTier": "operational",
+      "question": "Resolve the source and treatment of Water-damaged stock.",
+      "answer": "Assess damaged stock for a write-down.",
+      "evidence": [
+        "Bank statements and supporting case records"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D036",
+      "category": "evidence_matching",
+      "reviewTier": "operational",
+      "question": "Resolve the source and treatment of Customer insolvency.",
+      "answer": "Use the R17 record as supporting evidence only where it agrees to primary evidence.",
+      "evidence": [
+        "Bank statements and supporting case records"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D037",
+      "category": "evidence_matching",
+      "reviewTier": "operational",
+      "question": "Resolve the source and treatment of Former employee claim.",
+      "answer": "Assess the employee claim for a legal provision.",
+      "evidence": [
+        "Bank statements and supporting case records"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D038",
+      "category": "evidence_matching",
+      "reviewTier": "operational",
+      "question": "Resolve the source and treatment of Purchase total.",
+      "answer": "Record materials purchase using supplier evidence and inventory roll-forward.",
+      "evidence": [
+        "Bank statements and supporting case records"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D039",
+      "category": "evidence_matching",
+      "reviewTier": "operational",
+      "question": "Resolve the source and treatment of Cash collections total.",
+      "answer": "Record customer collections against receivables.",
+      "evidence": [
+        "Bank statements and supporting case records"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D040",
+      "category": "evidence_matching",
+      "reviewTier": "operational",
+      "question": "Resolve the source and treatment of Closing bank balance.",
+      "answer": "Reconcile the bank closing balance to €60,000.",
+      "evidence": [
+        "Bank statements, invoices and accounting schedules"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D041",
+      "category": "classification",
+      "reviewTier": "material",
+      "question": "Classify September customer deposits.",
+      "answer": "Recognise the deposits as contract liabilities, not revenue.",
+      "evidence": [
+        "Bank statements, invoices and accounting schedules"
+      ],
+      "confidence": "high",
+      "aiProposal": "Recognise the deposits as contract liabilities, not revenue.",
+      "independentChallenge": "The deposits have been received, but the linked events were not delivered by the reporting date.",
+      "studentReasoning": "Confirmed yes by the student: I checked the timing against the delivery evidence. Customers still have a right to the service, so this is a liability until delivery.",
+      "statementEffect": {
+        "profit": 0,
+        "cash": 0,
+        "assets": 0,
+        "liabilities": 90000,
+        "equity": 0
+      },
+      "changedFromAI": false,
+      "studentResponse": "yes"
+    },
+    {
+      "id": "D042",
+      "category": "classification",
+      "reviewTier": "material",
+      "question": "Classify New bank borrowing.",
+      "answer": "Recognise the €50,000 bank advance as cash and a bank loan.",
+      "evidence": [
+        "Bank statements, invoices and accounting schedules"
+      ],
+      "confidence": "high",
+      "aiProposal": "Recognise the €50,000 bank advance as cash and a bank loan.",
+      "independentChallenge": "The bank receipt cannot be treated as income because it creates a repayment obligation.",
+      "studentReasoning": "Confirmed yes by the student: The bank record supports both the cash receipt and the loan balance. Recording only cash would overstate equity.",
+      "statementEffect": {
+        "profit": 0,
+        "cash": 50000,
+        "assets": 50000,
+        "liabilities": 50000,
+        "equity": 0
+      },
+      "changedFromAI": false,
+      "studentResponse": "yes"
+    },
+    {
+      "id": "D043",
+      "category": "classification",
+      "reviewTier": "material",
+      "question": "Classify Packaging machine.",
+      "answer": "Capitalise the €60,000 packaging machine as PPE.",
+      "evidence": [
+        "Bank statements, invoices and accounting schedules"
+      ],
+      "confidence": "high",
+      "aiProposal": "Capitalise the €60,000 packaging machine as PPE.",
+      "independentChallenge": "The machine gives a benefit over more than one accounting period, so immediate expensing would understate assets.",
+      "studentReasoning": "Confirmed yes by the student: It is a long-life production asset. I capitalised the purchase and charge depreciation over its useful life.",
+      "statementEffect": {
+        "profit": 0,
+        "cash": -60000,
+        "assets": 0,
+        "liabilities": 0,
+        "equity": 0
+      },
+      "changedFromAI": false,
+      "studentResponse": "yes"
+    },
+    {
+      "id": "D044",
+      "category": "classification",
+      "reviewTier": "material",
+      "question": "Classify Photo booth.",
+      "answer": "Capitalise the €20,000 booth as PPE.",
+      "evidence": [
+        "Bank statements, invoices and accounting schedules"
+      ],
+      "confidence": "high",
+      "aiProposal": "Capitalise the €20,000 booth as PPE.",
+      "independentChallenge": "The booth is reusable equipment, not a one-off event expense.",
+      "studentReasoning": "Confirmed yes by the student: It will be used across future events, so I treated it as PPE and included it in the depreciation schedule.",
+      "statementEffect": {
+        "profit": 0,
+        "cash": -20000,
+        "assets": 0,
+        "liabilities": 0,
+        "equity": 0
+      },
+      "changedFromAI": false,
+      "studentResponse": "yes"
+    },
+    {
+      "id": "D045",
+      "category": "classification",
+      "reviewTier": "material",
+      "question": "Classify Machine belt and calibration.",
+      "answer": "Treat €10,000 as repair expense, not PPE.",
+      "evidence": [
+        "Bank statements, invoices and accounting schedules"
+      ],
+      "confidence": "high",
+      "aiProposal": "Treat €10,000 as repair expense, not PPE.",
+      "independentChallenge": "The work restores the existing asset rather than creating a new asset or increasing its capacity.",
+      "studentReasoning": "Confirmed yes by the student: The description says repair. I expensed it now because the benefit is maintenance of the existing asset.",
+      "statementEffect": {
+        "profit": -10000,
+        "cash": -10000,
+        "assets": -10000,
+        "liabilities": 0,
+        "equity": -10000
+      },
+      "changedFromAI": false,
+      "studentResponse": "yes"
+    },
+    {
+      "id": "D046",
+      "category": "classification",
+      "reviewTier": "material",
+      "question": "Classify Owner villa deposit.",
+      "answer": "Treat the €70,000 villa payment as an owner distribution.",
+      "evidence": [
+        "Bank statements, invoices and accounting schedules"
+      ],
+      "confidence": "high",
+      "aiProposal": "Treat the €70,000 villa payment as an owner distribution.",
+      "independentChallenge": "There is no business purpose or company benefit in the evidence.",
+      "studentReasoning": "Confirmed yes by the student: The villa is private. I removed it from expenses and reduced equity as a distribution to the owner.",
+      "statementEffect": {
+        "profit": 0,
+        "cash": -70000,
+        "assets": 0,
+        "liabilities": 0,
+        "equity": -70000
+      },
+      "changedFromAI": false,
+      "studentResponse": "yes"
+    },
+    {
+      "id": "D047",
+      "category": "classification",
+      "reviewTier": "material",
+      "question": "Classify Owner card spending.",
+      "answer": "Treat the €40,000 owner-card payment as an owner distribution.",
+      "evidence": [
+        "Bank statements, invoices and accounting schedules"
+      ],
+      "confidence": "high",
+      "aiProposal": "Treat the €40,000 owner-card payment as an owner distribution.",
+      "independentChallenge": "The spending is private and should not reduce operating profit.",
+      "studentReasoning": "Confirmed yes by the student: The card evidence does not support a business expense. I classified it as a distribution and reduced equity.",
+      "statementEffect": {
+        "profit": 0,
+        "cash": -40000,
+        "assets": 0,
+        "liabilities": 0,
+        "equity": -40000
+      },
+      "changedFromAI": false,
+      "studentResponse": "yes"
+    },
+    {
+      "id": "D048",
+      "category": "classification",
+      "reviewTier": "material",
+      "question": "Classify Physical product materials consumed.",
+      "answer": "Use the supported material-cost figure in the primary statements and disclose the inventory conflict.",
+      "evidence": [
+        "Bank statements, invoices and accounting schedules"
+      ],
+      "confidence": "high",
+      "aiProposal": "Use the supported material-cost figure in the primary statements and disclose the inventory conflict.",
+      "independentChallenge": "The physical count and supporting records are stronger evidence than the conflicting management spreadsheet.",
+      "studentReasoning": "Confirmed yes by the student: I used the count-supported closing inventory figure and recorded the conflict as an uncertainty for management follow-up.",
+      "statementEffect": {
+        "profit": null,
+        "cash": 0,
+        "assets": null,
+        "liabilities": 0,
+        "equity": null
+      },
+      "changedFromAI": false,
+      "studentResponse": "yes"
+    },
+    {
+      "id": "D049",
+      "category": "classification",
+      "reviewTier": "material",
+      "question": "Classify Event staff payroll.",
+      "answer": "Accrue unpaid payroll so payroll expense agrees to the year and the closing payable.",
+      "evidence": [
+        "Bank statements, invoices and accounting schedules"
+      ],
+      "confidence": "high",
+      "aiProposal": "Accrue unpaid payroll so payroll expense agrees to the year and the closing payable.",
+      "independentChallenge": "Cash payments alone do not show the full payroll cost for the period.",
+      "studentReasoning": "Confirmed yes by the student: I used the payroll roll-forward: opening payable plus expense less payments equals the €32,000 closing payable.",
+      "statementEffect": {
+        "profit": -32000,
+        "cash": 0,
+        "assets": 0,
+        "liabilities": 32000,
+        "equity": -32000
+      },
+      "changedFromAI": false,
+      "studentResponse": "yes"
+    },
+    {
+      "id": "D050",
+      "category": "classification",
+      "reviewTier": "operational",
+      "question": "Classify Sales team payroll.",
+      "answer": "Classify sales payroll as employee cost.",
+      "evidence": [
+        "Bank statements, invoices and accounting schedules"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D051",
+      "category": "classification",
+      "reviewTier": "operational",
+      "question": "Classify Office payroll.",
+      "answer": "Classify office payroll as employee cost.",
+      "evidence": [
+        "Bank statements, invoices and accounting schedules"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D052",
+      "category": "classification",
+      "reviewTier": "operational",
+      "question": "Classify Rent.",
+      "answer": "Classify rent as other operating expense.",
+      "evidence": [
+        "Bank statements, invoices and accounting schedules"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D053",
+      "category": "classification",
+      "reviewTier": "operational",
+      "question": "Classify Marketing.",
+      "answer": "Classify marketing as other operating expense.",
+      "evidence": [
+        "Bank statements, invoices and accounting schedules"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D054",
+      "category": "classification",
+      "reviewTier": "operational",
+      "question": "Classify Software.",
+      "answer": "Classify software as other operating expense.",
+      "evidence": [
+        "Bank statements, invoices and accounting schedules"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D055",
+      "category": "classification",
+      "reviewTier": "operational",
+      "question": "Classify Utilities.",
+      "answer": "Classify utilities as other operating expense.",
+      "evidence": [
+        "Bank statements, invoices and accounting schedules"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D056",
+      "category": "classification",
+      "reviewTier": "material",
+      "question": "Classify Depreciation.",
+      "answer": "Record €24,000 depreciation on PPE.",
+      "evidence": [
+        "Bank statements, invoices and accounting schedules"
+      ],
+      "confidence": "high",
+      "aiProposal": "Record €24,000 depreciation on PPE.",
+      "independentChallenge": "PPE is used during the period and its cost should be allocated over its useful life.",
+      "studentReasoning": "Confirmed yes by the student: The PPE schedule supports €24,000 current-year depreciation. This brings accumulated depreciation to €69,000.",
+      "statementEffect": {
+        "profit": -24000,
+        "cash": 0,
+        "assets": -24000,
+        "liabilities": 0,
+        "equity": -24000
+      },
+      "changedFromAI": false,
+      "studentResponse": "yes"
+    },
+    {
+      "id": "D057",
+      "category": "classification",
+      "reviewTier": "material",
+      "question": "Classify Bad receivable.",
+      "answer": "Retain the supported trade receivable balance, subject to bad-debt review.",
+      "evidence": [
+        "Bank statements, invoices and accounting schedules"
+      ],
+      "confidence": "high",
+      "aiProposal": "Retain the supported trade receivable balance, subject to bad-debt review.",
+      "independentChallenge": "Customer balances are supported by contract and collection evidence, but collectability still needs assessment.",
+      "studentReasoning": "Confirmed yes by the student: I retained the supported receivables figure and then considered a separate bad-debt charge for riskier balances.",
+      "statementEffect": {
+        "profit": 0,
+        "cash": 0,
+        "assets": 168000,
+        "liabilities": 0,
+        "equity": 0
+      },
+      "changedFromAI": false,
+      "studentResponse": "yes"
+    },
+    {
+      "id": "D058",
+      "category": "classification",
+      "reviewTier": "material",
+      "question": "Classify Damaged stock.",
+      "answer": "Write down damaged inventory where it cannot be sold at normal value.",
+      "evidence": [
+        "Bank statements, invoices and accounting schedules"
+      ],
+      "confidence": "high",
+      "aiProposal": "Write down damaged inventory where it cannot be sold at normal value.",
+      "independentChallenge": "Damaged stock should not remain at its original cost if its recoverable amount is lower.",
+      "studentReasoning": "Confirmed yes by the student: The warehouse evidence shows damage. I recorded the required write-down in the material-cost assessment.",
+      "statementEffect": {
+        "profit": null,
+        "cash": 0,
+        "assets": null,
+        "liabilities": 0,
+        "equity": null
+      },
+      "changedFromAI": false,
+      "studentResponse": "yes"
+    },
+    {
+      "id": "D059",
+      "category": "classification",
+      "reviewTier": "material",
+      "question": "Classify Probable legal claim.",
+      "answer": "Recognise a provision for the employee claim where the obligation is probable and measurable.",
+      "evidence": [
+        "Bank statements, invoices and accounting schedules"
+      ],
+      "confidence": "high",
+      "aiProposal": "Recognise a provision for the employee claim where the obligation is probable and measurable.",
+      "independentChallenge": "The legal evidence indicates a present exposure that should not be ignored.",
+      "studentReasoning": "Confirmed yes by the student: I used a €25,000 provision based on the case evidence. It is a cautious estimate and should be reviewed when the claim develops.",
+      "statementEffect": {
+        "profit": -25000,
+        "cash": 0,
+        "assets": 0,
+        "liabilities": 25000,
+        "equity": -25000
+      },
+      "changedFromAI": false,
+      "studentResponse": "yes"
+    },
+    {
+      "id": "D060",
+      "category": "classification",
+      "reviewTier": "operational",
+      "question": "Classify Insurance consumed.",
+      "answer": "Use nil insurance expense unless evidence is later provided.",
+      "evidence": [
+        "Customer contracts, acceptance records and delivery evidence"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D061",
+      "category": "classification",
+      "reviewTier": "operational",
+      "question": "Classify Unpaid interest.",
+      "answer": "Accrue the unpaid interest amount where supported.",
+      "evidence": [
+        "Customer contracts, acceptance records and delivery evidence"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D062",
+      "category": "classification",
+      "reviewTier": "operational",
+      "question": "Classify Unpaid payroll.",
+      "answer": "Accrue payroll payable to the €32,000 closing balance.",
+      "evidence": [
+        "Customer contracts, acceptance records and delivery evidence"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D063",
+      "category": "classification",
+      "reviewTier": "operational",
+      "question": "Classify Unpaid suppliers.",
+      "answer": "Use the supplier-payable balance supported by the reconciliations.",
+      "evidence": [
+        "Customer contracts, acceptance records and delivery evidence"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D064",
+      "category": "classification",
+      "reviewTier": "material",
+      "question": "Classify Delivered NorthStar contract.",
+      "answer": "Recognise NorthStar revenue only for delivered and accepted work.",
+      "evidence": [
+        "Customer contracts, acceptance records and delivery evidence"
+      ],
+      "confidence": "high",
+      "aiProposal": "Recognise NorthStar revenue only for delivered and accepted work.",
+      "independentChallenge": "Receipt of money is not enough; delivery and acceptance are the revenue trigger.",
+      "studentReasoning": "Confirmed yes by the student: I matched the NorthStar contract evidence to delivery and acceptance before recognising revenue.",
+      "statementEffect": {
+        "profit": null,
+        "cash": 0,
+        "assets": null,
+        "liabilities": 0,
+        "equity": null
+      },
+      "changedFromAI": false,
+      "studentResponse": "yes"
+    },
+    {
+      "id": "D065",
+      "category": "classification",
+      "reviewTier": "material",
+      "question": "Classify Delivered Freedom contract.",
+      "answer": "Recognise Freedom revenue only for delivered and accepted work.",
+      "evidence": [
+        "Customer contracts, acceptance records and delivery evidence"
+      ],
+      "confidence": "high",
+      "aiProposal": "Recognise Freedom revenue only for delivered and accepted work.",
+      "independentChallenge": "The customer deposit and final service delivery have different accounting timing.",
+      "studentReasoning": "Confirmed yes by the student: I separated the deposit from the delivered service so revenue is not recognised too early.",
+      "statementEffect": {
+        "profit": null,
+        "cash": 0,
+        "assets": null,
+        "liabilities": 0,
+        "equity": null
+      },
+      "changedFromAI": false,
+      "studentResponse": "yes"
+    },
+    {
+      "id": "D066",
+      "category": "classification",
+      "reviewTier": "material",
+      "question": "Classify Completed Phoenix event.",
+      "answer": "Recognise Phoenix revenue only for completed performance obligations.",
+      "evidence": [
+        "Customer contracts, acceptance records and delivery evidence"
+      ],
+      "confidence": "high",
+      "aiProposal": "Recognise Phoenix revenue only for completed performance obligations.",
+      "independentChallenge": "The contract needs delivery evidence, not just an invoice or planned event.",
+      "studentReasoning": "Confirmed yes by the student: I used the completion evidence for the revenue decision and kept any undelivered element out of revenue.",
+      "statementEffect": {
+        "profit": null,
+        "cash": 0,
+        "assets": null,
+        "liabilities": 0,
+        "equity": null
+      },
+      "changedFromAI": false,
+      "studentResponse": "yes"
+    },
+    {
+      "id": "D067",
+      "category": "classification",
+      "reviewTier": "material",
+      "question": "Classify Delivered Liberty order.",
+      "answer": "Recognise Liberty revenue only when the agreed service was delivered.",
+      "evidence": [
+        "Customer contracts, acceptance records and delivery evidence"
+      ],
+      "confidence": "high",
+      "aiProposal": "Recognise Liberty revenue only when the agreed service was delivered.",
+      "independentChallenge": "Customer acceptance and service completion are the key evidence.",
+      "studentReasoning": "Confirmed yes by the student: I linked the Liberty amount to the completion records rather than to cash timing.",
+      "statementEffect": {
+        "profit": null,
+        "cash": 0,
+        "assets": null,
+        "liabilities": 0,
+        "equity": null
+      },
+      "changedFromAI": false,
+      "studentResponse": "yes"
+    },
+    {
+      "id": "D068",
+      "category": "classification",
+      "reviewTier": "material",
+      "question": "Classify Undelivered September events.",
+      "answer": "Keep undelivered events in contract liabilities until performance is complete.",
+      "evidence": [
+        "Customer contracts, acceptance records and delivery evidence"
+      ],
+      "confidence": "high",
+      "aiProposal": "Keep undelivered events in contract liabilities until performance is complete.",
+      "independentChallenge": "Recognising these amounts early would overstate revenue and profit.",
+      "studentReasoning": "Confirmed yes by the student: I kept the €90,000 deposits as a liability because the events were still owed at the reporting date.",
+      "statementEffect": {
+        "profit": -90000,
+        "cash": 0,
+        "assets": 0,
+        "liabilities": 90000,
+        "equity": -90000
+      },
+      "changedFromAI": false,
+      "studentResponse": "yes"
+    },
+    {
+      "id": "D069",
+      "category": "classification",
+      "reviewTier": "operational",
+      "question": "Classify Loan principal payment.",
+      "answer": "Show loan principal repayments in financing cash flows.",
+      "evidence": [
+        "Customer contracts, acceptance records and delivery evidence"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D070",
+      "category": "classification",
+      "reviewTier": "operational",
+      "question": "Classify Equipment purchase.",
+      "answer": "Show PPE purchases in investing cash flows.",
+      "evidence": [
+        "Supporting schedules and reconciled financial statements"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D071",
+      "category": "estimation",
+      "reviewTier": "material",
+      "question": "Estimate Closing bad-debt allowance/write-off and document the basis.",
+      "answer": "Recognise an €18,000 bad-debt expense for the identified credit risk.",
+      "evidence": [
+        "Supporting schedules and reconciled financial statements"
+      ],
+      "confidence": "high",
+      "aiProposal": "Recognise an €18,000 bad-debt expense for the identified credit risk.",
+      "independentChallenge": "The receivable may not be fully collected, so leaving it at gross value would be optimistic.",
+      "studentReasoning": "Confirmed yes by the student: I used the evidence of collection risk and recorded an €18,000 allowance to show the expected loss.",
+      "statementEffect": {
+        "profit": -18000,
+        "cash": 0,
+        "assets": -18000,
+        "liabilities": 0,
+        "equity": -18000
+      },
+      "changedFromAI": false,
+      "studentResponse": "yes"
+    },
+    {
+      "id": "D072",
+      "category": "estimation",
+      "reviewTier": "material",
+      "question": "Estimate Damaged inventory write-off and document the basis.",
+      "answer": "Disclose the €2,000 disposal quote as an uncertainty, not a booked cost.",
+      "evidence": [
+        "Supporting schedules and reconciled financial statements"
+      ],
+      "confidence": "high",
+      "aiProposal": "Disclose the €2,000 disposal quote as an uncertainty, not a booked cost.",
+      "independentChallenge": "A quote is not proof that a disposal obligation or invoice exists.",
+      "studentReasoning": "Confirmed yes by the student: I did not record the €2,000 because the available evidence is only a quote. I included it in the uncertainties for follow-up.",
+      "statementEffect": {
+        "profit": 0,
+        "cash": 0,
+        "assets": 0,
+        "liabilities": 0,
+        "equity": 0
+      },
+      "changedFromAI": false,
+      "studentResponse": "yes"
+    },
+    {
+      "id": "D073",
+      "category": "estimation",
+      "reviewTier": "material",
+      "question": "Estimate Legal provision and document the basis.",
+      "answer": "Recognise the €25,000 legal provision.",
+      "evidence": [
+        "Supporting schedules and reconciled financial statements"
+      ],
+      "confidence": "high",
+      "aiProposal": "Recognise the €25,000 legal provision.",
+      "independentChallenge": "The claim is material and the evidence supports a probable, measurable obligation.",
+      "studentReasoning": "Confirmed yes by the student: I included the €25,000 provision in liabilities and expense. It should be updated if legal advice changes.",
+      "statementEffect": {
+        "profit": -25000,
+        "cash": 0,
+        "assets": 0,
+        "liabilities": 25000,
+        "equity": -25000
+      },
+      "changedFromAI": false,
+      "studentResponse": "yes"
+    },
+    {
+      "id": "D074",
+      "category": "estimation",
+      "reviewTier": "material",
+      "question": "Estimate Period depreciation and document the basis.",
+      "answer": "Use the €24,000 depreciation charge in the P&L.",
+      "evidence": [
+        "Supporting schedules and reconciled financial statements"
+      ],
+      "confidence": "high",
+      "aiProposal": "Use the €24,000 depreciation charge in the P&L.",
+      "independentChallenge": "The charge is supported by the PPE roll-forward and avoids overstating profit.",
+      "studentReasoning": "Confirmed yes by the student: I cross-checked the depreciation expense against the PPE schedule and used €24,000 in the P&L.",
+      "statementEffect": {
+        "profit": -24000,
+        "cash": 0,
+        "assets": -24000,
+        "liabilities": 0,
+        "equity": -24000
+      },
+      "changedFromAI": false,
+      "studentResponse": "yes"
+    },
+    {
+      "id": "D075",
+      "category": "estimation",
+      "reviewTier": "material",
+      "question": "Estimate Closing inventory and document the basis.",
+      "answer": "Use the primary closing-inventory figure and disclose the conflicting management number.",
+      "evidence": [
+        "Supporting schedules and reconciled financial statements"
+      ],
+      "confidence": "high",
+      "aiProposal": "Use the primary closing-inventory figure and disclose the conflicting management number.",
+      "independentChallenge": "The physical-count evidence is more reliable than the management spreadsheet.",
+      "studentReasoning": "Confirmed yes by the student: I used the count-supported figure in the accounts and clearly noted the conflict rather than hiding it.",
+      "statementEffect": {
+        "profit": null,
+        "cash": 0,
+        "assets": null,
+        "liabilities": 0,
+        "equity": null
+      },
+      "changedFromAI": false,
+      "studentResponse": "yes"
+    },
+    {
+      "id": "D076",
+      "category": "estimation",
+      "reviewTier": "operational",
+      "question": "Estimate Closing receivables and document the basis.",
+      "answer": "Use the supported closing trade-receivable balance.",
+      "evidence": [
+        "Supporting schedules and reconciled financial statements"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D077",
+      "category": "estimation",
+      "reviewTier": "operational",
+      "question": "Estimate Repair versus improvement amount and document the basis.",
+      "answer": "Use €10,000 repair expense in operating costs.",
+      "evidence": [
+        "Supporting schedules and reconciled financial statements"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D078",
+      "category": "estimation",
+      "reviewTier": "operational",
+      "question": "Estimate Insurance expense and document the basis.",
+      "answer": "Use nil insurance expense unless additional evidence appears.",
+      "evidence": [
+        "Supporting schedules and reconciled financial statements"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D079",
+      "category": "estimation",
+      "reviewTier": "operational",
+      "question": "Estimate Interest payable and document the basis.",
+      "answer": "Use the supported interest-payable balance.",
+      "evidence": [
+        "Supporting schedules and reconciled financial statements"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D080",
+      "category": "estimation",
+      "reviewTier": "operational",
+      "question": "Estimate Accrued payroll and document the basis.",
+      "answer": "Use €32,000 closing payroll payable.",
+      "evidence": [
+        "Supporting schedules and reconciled financial statements"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D081",
+      "category": "estimation",
+      "reviewTier": "operational",
+      "question": "Estimate Customer deposit liability and document the basis.",
+      "answer": "Use €90,000 closing customer deposits as contract liabilities.",
+      "evidence": [
+        "Supporting schedules and reconciled financial statements"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D082",
+      "category": "estimation",
+      "reviewTier": "operational",
+      "question": "Estimate PPE closing cost and document the basis.",
+      "answer": "Use €260,000 closing gross PPE cost.",
+      "evidence": [
+        "Supporting schedules and reconciled financial statements"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D083",
+      "category": "estimation",
+      "reviewTier": "operational",
+      "question": "Estimate Accumulated depreciation and document the basis.",
+      "answer": "Use €69,000 closing accumulated depreciation.",
+      "evidence": [
+        "Supporting schedules and reconciled financial statements"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D084",
+      "category": "estimation",
+      "reviewTier": "operational",
+      "question": "Estimate Supplier payable and document the basis.",
+      "answer": "Use the reconciled supplier-payable balance.",
+      "evidence": [
+        "Supporting schedules and reconciled financial statements"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D085",
+      "category": "estimation",
+      "reviewTier": "operational",
+      "question": "Estimate Closing loan and document the basis.",
+      "answer": "Use €131,000 closing loan balance.",
+      "evidence": [
+        "Supporting schedules and reconciled financial statements"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D086",
+      "category": "estimation",
+      "reviewTier": "operational",
+      "question": "Estimate Physical COGS and document the basis.",
+      "answer": "Use €396,000 material cost of sales.",
+      "evidence": [
+        "Supporting schedules and reconciled financial statements"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D087",
+      "category": "estimation",
+      "reviewTier": "operational",
+      "question": "Estimate Service direct payroll and document the basis.",
+      "answer": "Use €80,000 direct payroll in cost of sales.",
+      "evidence": [
+        "Supporting schedules and reconciled financial statements"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D088",
+      "category": "estimation",
+      "reviewTier": "operational",
+      "question": "Estimate Owner distributions and document the basis.",
+      "answer": "Use €110,000 owner distributions in equity.",
+      "evidence": [
+        "Supporting schedules and reconciled financial statements"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D089",
+      "category": "estimation",
+      "reviewTier": "operational",
+      "question": "Estimate Net profit and document the basis.",
+      "answer": "Use €74,000 profit before tax after interest expense.",
+      "evidence": [
+        "Supporting schedules and reconciled financial statements"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D090",
+      "category": "estimation",
+      "reviewTier": "operational",
+      "question": "Estimate Closing cash and document the basis.",
+      "answer": "Use €60,000 closing cash.",
+      "evidence": [
+        "Bank statements and supporting case records"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D091",
+      "category": "board_decision",
+      "reviewTier": "material",
+      "question": "Approve corrected accounts before valuation",
+      "answer": "Approve the corrected accounts only after the review checks are complete.",
+      "evidence": [
+        "Bank statements and supporting case records"
+      ],
+      "confidence": "high",
+      "aiProposal": "Approve the corrected accounts only after the review checks are complete.",
+      "independentChallenge": "The corrected P&L, balance sheet and supporting schedules now reconcile, but management must act on the listed uncertainties.",
+      "studentReasoning": "Confirmed yes by the student: I checked that the P&L includes €12,000 interest and reconciles from €86,000 operating profit to €74,000 profit before tax.",
+      "statementEffect": {
+        "profit": 0,
+        "cash": 0,
+        "assets": 0,
+        "liabilities": 0,
+        "equity": 0
+      },
+      "changedFromAI": false,
+      "studentResponse": "yes"
+    },
+    {
+      "id": "D092",
+      "category": "board_decision",
+      "reviewTier": "operational",
+      "question": "Freeze owner-card access",
+      "answer": "Freeze further owner distributions until controls improve.",
+      "evidence": [
+        "Bank statements and supporting case records"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D093",
+      "category": "board_decision",
+      "reviewTier": "operational",
+      "question": "Move September deposits to contract liabilities",
+      "answer": "Keep deposits as liabilities and communicate delivery obligations.",
+      "evidence": [
+        "Bank statements and supporting case records"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D094",
+      "category": "board_decision",
+      "reviewTier": "operational",
+      "question": "Begin weekly 13-week cash forecast",
+      "answer": "Prepare a weekly cash forecast.",
+      "evidence": [
+        "Bank statements and supporting case records"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D095",
+      "category": "board_decision",
+      "reviewTier": "operational",
+      "question": "Stop credit sales to insolvent/high-risk customers",
+      "answer": "Stop new credit until collections are reviewed.",
+      "evidence": [
+        "Bank statements and supporting case records"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D096",
+      "category": "board_decision",
+      "reviewTier": "operational",
+      "question": "Dispose of damaged stock",
+      "answer": "Complete a damaged-stock review and disposal plan.",
+      "evidence": [
+        "Bank statements and supporting case records"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D097",
+      "category": "board_decision",
+      "reviewTier": "operational",
+      "question": "Investigate management override and duplicate sources",
+      "answer": "Investigate the unexplained or conflicting records.",
+      "evidence": [
+        "Bank statements and supporting case records"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D098",
+      "category": "board_decision",
+      "reviewTier": "operational",
+      "question": "Renegotiate supplier terms",
+      "answer": "Confirm the supplier balance directly with the supplier.",
+      "evidence": [
+        "Bank statements and supporting case records"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D099",
+      "category": "board_decision",
+      "reviewTier": "operational",
+      "question": "Continue core Finally Single and event operations",
+      "answer": "Continue core operations only with the recommended controls.",
+      "evidence": [
+        "Bank statements and supporting case records"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "D100",
+      "category": "board_decision",
+      "reviewTier": "material",
+      "question": "Use claimed management profit for earn-out",
+      "answer": "Do not approve an earn-out or dividend while controls and unresolved matters remain.",
+      "evidence": [
+        "Bank statements and supporting case records"
+      ],
+      "confidence": "high",
+      "aiProposal": "Do not approve an earn-out or dividend while controls and unresolved matters remain.",
+      "independentChallenge": "Cash, inventory and legal risks mean value should not be distributed prematurely.",
+      "studentReasoning": "Confirmed yes by the student: I recommend no owner distribution or earn-out until the cash forecast, stock count, supplier balance and legal claim are resolved.",
+      "statementEffect": {
+        "profit": 0,
+        "cash": 0,
+        "assets": 0,
+        "liabilities": 0,
+        "equity": 0
+      },
+      "changedFromAI": false,
+      "studentResponse": "yes"
+    }
+  ]
+}
